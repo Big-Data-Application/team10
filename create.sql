@@ -1,3 +1,15 @@
+--조유담
+CREATE TABLE `dam_movie` 
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `영화명`	varchar(300),
+    `영화명(영문)`	varchar(300),
+    `제작연도`	varchar(300),
+    `장르`	varchar(300),
+    `감독`	varchar(300),
+    `제작사`	varchar(300)
+);
+
 -- 홍진서 
 CREATE TABLE movie_info (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
