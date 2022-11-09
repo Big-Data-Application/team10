@@ -26,3 +26,15 @@ CREATE TABLE movie_info (
     GRAD_NM VARCHAR(200),
     MOVIE_SE VARCHAR(30)
 );
+
+
+--이유림
+CREATE TABLE movie_boxoffice_ranking (
+	ranking INT NOT NULL,
+	title VARCHAR(255) NOT NULL PRIMARY KEY,
+    date VARCHAR(255) NOT NULL,
+    sales VARCHAR(255) NOT NULL,
+    audience VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    distributor VARCHAR(255) NOT NULL
+);
