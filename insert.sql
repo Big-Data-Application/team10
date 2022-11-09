@@ -871,6 +871,13 @@ INSERT INTO `dam_movie` (`영화명`, `영화명(영문)`, `제작연도`, `장�
 	('서울이 보이냐', 'Unforgettadle', '2008', '"가족,드라마"', '송동윤', '(주)라인픽처스'),
 	('"대한이, 민국씨"', 'Love Is Beautiful', '2007', '코미디', '최진원', '(주)퍼니필름'),
 	('심장이 뛴다', 'Heartbeat', '2010', '드라마', '윤재근', '"(주)오죤필름,(유)대결문화산업전문회사"');
+	
+UPDATE dam_movie SET 감독 = REPLACE(감독, """", '');
+UPDATE dam_movie SET 제작사 = REPLACE(제작사, """", '');
+UPDATE dam_movie SET 장르 = REPLACE(장르, """", '');
+UPDATE dam_movie SET 영화명 = REPLACE(영화명, """", '');
+ALTER TABLE dam_movie RENAME COLUMN `영화명(영문)` TO 영문영화명;
+UPDATE dam_movie SET 영문영화명 = REPLACE(영문영화명, """", '');
 
 -- 홍진서
 INSERT INTO `movie_info` (`SN`, `MOVIE_NM`, `MNG_NM`, `MAKR_NM`, `IMPORT_CMPNY_NM`, `DISTB_CMPNY_NM`, `OPEN_DE`, `MOVIE_TY_NM`, `MOVIE_STLE_NM`, `NLTY_NM`, `WNTY_SCREEN_CO`, `WNTY_SELNG_AM`, `WNTY_AUDE_CO`, `SU_SELNG_AM`, `SU_AUDE_CO`, `GENRE_NM`, `GRAD_NM`, `MOVIE_SE`) VALUES ('1', '남산의 부장들', '우민호', '(주)하이브미디어코프', '', '(주)쇼박스', '20200122', '개봉영화', '장편', '한국', '1659', '41223596650', '4750104', '9851448590', '1113402', '드라마', '15세이상관람가', '일반영화');

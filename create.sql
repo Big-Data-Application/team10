@@ -8,7 +8,9 @@ CREATE TABLE `dam_movie`
     `장르`	varchar(300),
     `감독`	varchar(300),
     `제작사`	varchar(300)
+    
 );
+
 
 -- 홍진서 
 CREATE TABLE movie_info (
