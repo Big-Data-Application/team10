@@ -16,8 +16,14 @@
     }
 
 
-    $sql = "SELECT * FROM movie_boxoffice WHERE id = {$_GET['id'";
-
+    $sql = "SELECT * FROM movie_boxoffice WHERE m_id = {$_GET['m_id']}"; 
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $article = array(
+        'title' => $row['title'],
+        'released_date' => $row['released_date']
+    );
+    print_r($article);
 ?>
 
 
@@ -35,4 +41,6 @@
 </head>
 <body>
 <a href = "create.php"> create </a> 
+<h2><?=$article['title']?></h2>
+<?=$article['released_date']?>
 </body>
