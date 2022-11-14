@@ -1,3 +1,4 @@
+
 <?php
 
 $conn = mysqli_connect("localhost", "team10", "team10", "team10");
@@ -56,24 +57,26 @@ $row_r = mysqli_fetch_array($result_r);
     <p> 평점: <?php echo $row_r['rating'];?></p>
     
     
-
+    
     <form action = "ratingInput.php" method ="post">
-    <select>
-        <option selected>내 평점 등록하기</option>
-        <option name = "number" value= "1">1점</option>
-        <option name = "number" value= "2">2점</option>
-        <option name = "number" value= "3">3점</option>
-        <option name = "number" value="4">4점</option>
-        <option name = "number" value="5">5점</option>
-        <option name = "number" value="6">6점</option>
-        <option name = "number" value="7">7점</option>
-        <option name = "number" value="8">8점</option>
-        <option name = "number" value="9">9점</option>
-        <option name = "number" value="10">10점</option>
-    </select>
+        <input type= "hidden" name= "movie" value= "<?php echo $id;?>"/>
+        <input type="text" name= "user_id">
+        <select name = "num">
+            <option selected value= "">내 평점 등록하기</option>
+            <option value= "1">1점</option>
+            <option value= "2">2점</option>
+            <option value= "3">3점</option>
+            <option value="4">4점</option>
+            <option value="5">5점</option>
+            <option value="6">6점</option>
+            <option value="7">7점</option>
+            <option value="8">8점</option>
+            <option value="9">9점</option>
+            <option value="10">10점</option>
+        </select>
         <input type = "submit" value= "등록">
     </form>
-
+    
 
 
 
